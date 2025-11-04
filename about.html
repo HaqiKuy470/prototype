@@ -1,59 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Us - The Mie7Tjin</title>
-    <link rel="stylesheet" href="styles.css?v=2">
+<html lang="id"> <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Mie7Tjin</title> <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="foto/file.jpeg" alt="The Mie7Tjin Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="menu.html">PRODUCT</a></li> 
-                <li><a href="about.html" class="active-link">ABOUT US</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="about-us-page">
-        <div class="about-logo-container">
-            <img src="foto/file.jpeg" alt="The Mie7Tjin Logo Large">
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img src="foto/logo baru panjang.png" alt="Mie7Tjin Logo">
+        </a>
+        
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         
-        <div class="about-text-container">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-            <ul class="social-links">
-                <li>
-                    <a href="#">
-                        <span class="icon">🌐</span> Lorem ipsum
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">📸</span> Lorem ipsum
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">✳️</span> Lorem ipsum
-                    </a>
-                </li>
-            </ul>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Beranda</a> <a href="menu.html">Menu</a>
+          <a href="about.html" class="active">Tentang Kami</a> </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Tentang Mie7Tjin</h1> <p class="hero-subtitle">MieT7in adalah inovasi kuliner yang mengintegrasikan kenikmatan mie dengan roti sandwich dalam satu sajian unik. </p> </div>
+  </section>
+
+
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title">Apa yang Membuat Produk Kami Istimewa</h2> <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🥢</div>
+          <h3></h3> <p class="card-description">Setiap porsi mi dibuat segar setiap hari oleh ahli pembuat mi kami menggunakan teknik tradisional yang disempurnakan selama puluhan tahun.</p> </div>
+        <div class="card">
+          <div class="card-icon">🌶️</div>
+          <h3>Resep Rahasia Keluarga</h3> <p class="card-description">Saus dan kaldu andalan kami dibuat dari resep yang diturunkan melalui tiga generasi keluarga kami.</p> </div>
+        <div class="card">
+          <div class="card-icon">🥗</div>
+          <h3>Bahan-Bahan Segar</h3> <p class="card-description">Kami mengambil sayuran, daging, dan rempah-rempah setiap hari dari pemasok lokal tepercaya untuk memastikan kesegaran dan rasa yang maksimal.</p> </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Pelayanan Cepat</h3> <p class="card-description">Meskipun kami berkomitmen pada kualitas, kami bangga dengan pelayanan yang efisien – makanan Anda tiba panas dan siap dalam hitungan menit.</p> </div>
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3>Harga Terjangkau</h3> <p class="card-description">Makanan berkualitas tidak harus mahal. Kami menawarkan porsi besar dengan harga yang menghargai anggaran Anda.</p> </div>
+        <div class="card">
+          <div class="card-icon">🏠</div>
+          <h3>Suasana Kekeluargaan</h3> <p class="card-description">Ruang kami yang ramah dirancang untuk membuat Anda merasa di rumah, baik Anda makan sendiri atau bersama orang terkasih.</p> </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="foto/logo tok.png" alt="Logo Mie7Tjin" style="width: 60px; margin-bottom: 1rem;"> <h3>Mie7Tjin</h3>
+          <p>Makanan Cepat Saji Mahasiswa</p>
         </div>
-    </main>
+        <div class="footer-col">
+          <h3>Tautan Cepat</h3> <ul>
+            <li><a href="index.html">Beranda</a></li> <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">Tentang Kami</a></li> </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Hubungi Kami</h3> <p>Email: miet7jin@gmail.com</p>
+          <p>Phone: +62 823 3654 5538</p>
+        </div>
+        <div class="footer-col">
+          <h3>Ikuti Kami</h3> <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-solid fa-globe"></i></a>
+        </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MieT7in. © copyright.</p> </div>
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 The Mie7Tjin. All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
