@@ -1,580 +1,445 @@
-/* Reset beberapa style dasar untuk semua elemen */
+/* ===== RESET & BASE ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Body & Font Styles (MODIFIED FOR STICKY FOOTER) */
+:root {
+  --orange: #ff6b35;
+  --amber: #f7931e;
+  --dark: #1a1a1a;
+  --darker: #0f0f0f;
+  --card-bg: #2a2a2a;
+  --white: #ffffff;
+  --gray: #cccccc;
+  --light-gray: #999999;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4; 
-    color: #333; 
-    
-    /* --- TAMBAHAN BARU UNTUK STICKY FOOTER --- */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Membuat body setidaknya setinggi layar */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* --- RULE BARU UNTUK STICKY FOOTER --- */
-/* Membuat konten utama tumbuh mengisi ruang kosong */
-main {
-    flex-grow: 1; /* Ini akan mendorong footer ke bawah */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-
-/* --- STYLE HEADER --- */
+/* ===== HEADER ===== */
 header {
-    background-color: #fff;
-    padding: 15px 50px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 1rem 0;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  width: 160px;
+  height: 90px;
+  object-fit: contain;
 }
 
-nav .logo img {
-    width: 40px;
-    height: auto;
-    object-fit: contain;
+.logo-text {
+  font-size: 1.8rem;  /* Besarkan juga teks logonya */
+  font-weight: 700;
+  color: var(--orange);
+}
+
+/* Untuk mobile, tetap agak kecil */
+@media (max-width: 480px) {
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: var(--orange);
+  border-radius: 3px;
+  transition: 0.3s;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 35px;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
-.nav-links li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.2s ease;
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
-.nav-links li a:hover {
-    color: #e61f25; /* Berubah jadi merah saat di-hover */
+.nav-links a:hover,
+.nav-links a.active {
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  color: var(--white);
 }
 
-.nav-links li a:active {
-    color: #c01a1f; /* Warna merah lebih gelap saat ditekan */
-}
-
-/* Memberi warna pada link header yang aktif */
-.nav-links li a.active-link {
-    color: #e61f25;
-}
-
-
-/* --- Hero Section (index.html) --- */
+/* ===== HERO SECTION ===== */
 .hero {
-    display: flex;
-    justify-content: space-around; 
-    align-items: center;
-    background-color: #f4f4f4; 
-    color: #333; 
-    padding: 80px 50px;
-    min-height: 80vh;
-    padding-top: 100px; 
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  text-align: center;
+  padding: 8rem 2rem 2rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 70%),
+              radial-gradient(circle at 70% 80%, rgba(247, 147, 30, 0.15) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .hero-content {
-    text-align: left; 
-    max-width: 500px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
 }
 
-.hero-content h1 {
-    font-size: 4.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
 }
 
-.hero-content p {
-    font-size: 1.8rem;
-    margin: 20px 0;
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
 }
 
-/* Tombol CTA (Global) */
-.cta-button {
-    padding: 15px 30px;
-    background-color: #e61f25; 
-    color: #fff; 
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    display: inline-block;
-    cursor: pointer; 
-    
-    transition: transform 0.1s ease-out, background-color 0.2s ease;
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--light-gray);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.cta-button:hover {
-    background-color: #c01a1f;
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.cta-button:active {
-    transform: scale(0.98); 
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
 }
 
-
-.hero-image img {
-    width: 100%;
-    max-width: 500px; 
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
 }
 
-/* About Section (index.html) */
-.about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px; 
-    background-color: #e61f25; 
-    color: #fff; 
-    text-align: left; 
-    padding: 80px 50px;
-    flex-wrap: wrap; 
+/* ===== SECTIONS ===== */
+.section-padding {
+  padding: 5rem 0;
 }
 
-.about-image img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--white);
 }
 
-.about-content {
-    max-width: 500px;
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  margin: 1rem auto;
+  border-radius: 2px;
 }
 
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--gray);
+  line-height: 1.8;
 }
 
-.about p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #f0f0f0; 
+/* ===== CARDS ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-/* Menu Section (index.html) */
-.menu {
-    background-color: #f4f4f4; 
-    text-align: center;
-    padding: 60px 30px;
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.menu h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
 }
 
-.menu-subtitle {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 40px;
+.card-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
 
-.menu-items {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Menu Item (index.html) */
-.menu-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
-    text-align: center;
-    width: 280px;
-    margin-bottom: 20px;
-    
-    position: relative; 
-    z-index: 1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    cursor: pointer;
+.card-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0;
 }
 
-.menu-item:hover {
-    transform: translateY(-10px) scale(1.02); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
-    z-index: 10;
+.card-description {
+  color: var(--gray);
+  line-height: 1.6;
 }
 
-.menu-item img {
-    width: 100%;
-    height: 200px; 
-    border-radius: 8px;
-    object-fit: cover;
+/* ===== FEATURES ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-.menu-item p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 15px;
+.feature-box {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
 }
 
-/* Footer (Global) */
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-box p {
+  color: var(--gray);
+}
+
+/* ===== FOOTER ===== */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 30px;
+  background: var(--darker);
+  padding: 3rem 0 1rem;
+  border-top: 3px solid var(--orange);
 }
 
-footer p {
-    font-size: 1rem;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-
-/* ============================================== */
-/* === STYLE UNTUK HALAMAN MENU (menu.html) === */
-/* ============================================== */
-
-/* Kontainer utama halaman menu */
-.menu-page-container {
-    background-color: #f4f4f4; /* Latar abu-abu */
-    padding: 60px 30px;
-    text-align: center;
+.footer-col h3 {
+  color: var(--orange);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-.menu-page-container h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    display: inline-block;
-    position: relative;
+.footer-col p {
+  color: var(--gray);
+  margin-bottom: 0.5rem;
 }
 
-/* Dekorasi garis di sekitar judul "FOOD" */
-.menu-page-container h1::before,
-.menu-page-container h1::after {
-    content: '》》》';
-    font-size: 0.8rem;
-    color: #888;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.footer-col ul {
+  list-style: none;
 }
 
-.menu-page-container h1::before {
-    left: -70px; /* Jarak garis kiri */
+.footer-col ul li {
+  margin-bottom: 0.5rem;
 }
 
-.menu-page-container h1::after {
-    right: -70px; /* Jarak garis kanan */
+.footer-col ul li a {
+  color: var(--gray);
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-
-/* Grid untuk semua item menu */
-.full-menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto; /* Menengahkan grid */
+.footer-col ul li a:hover {
+  color: var(--orange);
 }
 
-/* Kartu untuk setiap item menu */
-.grid-menu-item {
-    background-color: #fff;
-    border-radius: 15px; /* Sesuai desain, lebih bulat */
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.grid-menu-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.grid-menu-item img {
-    width: 100%;
-    max-width: 250px; /* Membatasi ukuran gambar */
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-/* Panah kecil di bawah */
-.item-arrow {
-    font-size: 1.5rem;
-    color: #aaa;
-    font-weight: bold;
-}
-
-/* ==================================================== */
-/* === STYLE UNTUK MODAL DETAIL MENU (menu.html) === */
-/* ==================================================== */
-
-.modal {
-    display: none; /* Tersembunyi secara default */
-    position: fixed; 
-    z-index: 2000; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.6); 
-    justify-content: center; 
-    align-items: center; 
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto; 
-    padding: 30px;
-    border-radius: 10px;
-    width: 80%; /* Lebar modal */
-    max-width: 500px; /* Lebar maksimal */
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    text-align: center;
-    animation: fadeIn 0.3s ease-out; /* Animasi muncul */
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 36px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#modalImage {
-    width: 100%;
-    max-width: 250px; /* Ukuran gambar di modal */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    object-fit: contain;
-}
-
-#modalTitle {
-    font-size: 2rem;
-    color: #e61f25;
-    margin-bottom: 10px;
-}
-
-#modalDescription {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-#modalPrice {
-    font-size: 1.4rem;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Animasi Fade In untuk modal */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-#modalOrderButton {
-    margin-top: 25px; /* Memberi jarak dari harga */
-    display: inline-block;
-}
-
-
-/* ============================================== */
-/* === STYLE UNTUK HALAMAN ABOUT US (about.html) === */
-/* ============================================== */
-
-.about-us-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px; /* Jarak antara logo dan teks */
-    padding: 80px 50px;
-    flex-wrap: wrap; /* Agar responsif */
-}
-
-.about-logo-container {
-    flex: 1; /* Mengambil ruang yang tersedia */
-    max-width: 400px; /* Lebar maksimal logo */
-}
-
-.about-logo-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px; /* Sedikit lengkungan di sudut */
-}
-
-.about-text-container {
-    flex: 2; /* Mengambil 2x ruang dibanding logo */
-    max-width: 600px; /* Lebar maksimal teks */
-}
-
-.about-text-container p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 40px; /* Jarak ke sosial media */
-}
-
-/* Styling untuk daftar link sosial media */
 .social-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Menyusun ke bawah */
-    gap: 20px; /* Jarak antar link */
+  display: flex;
+  gap: 1rem;
 }
 
-.social-links li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 1.2rem;
-    display: flex; /* Mengatur ikon dan teks sejajar */
-    align-items: center;
-    gap: 15px; /* Jarak antara ikon dan teks */
-    transition: color 0.2s ease;
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--card-bg);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: 0.3s;
+  color: #ffffff; /* <-- TAMBAHKAN BARIS INI */
 }
 
-.social-links li a:hover {
-    color: #e61f25; /* Berubah merah saat di-hover */
+.social-links a:hover {
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  transform: translateY(-3px);
 }
 
-.social-links .icon {
-    font-size: 2rem; /* Ukuran emoji/ikon */
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--light-gray);
 }
 
-
-/* ============================================== */
-/* === KODE RESPONSIF (GLOBAL) === */
-/* ============================================== */
-
-@media (max-width: 900px) {
-    /* (index.html) */
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-content {
-        text-align: center;
-    }
-    .about {
-        flex-direction: column;
-        text-align: center;
-    }
-    .about-content {
-        text-align: center;
-    }
-    
-    /* (menu.html) */
-    .full-menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    /* (Global) Header responsif */
-    header {
-        padding: 15px 20px;
-    }
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links {
-        padding-top: 10px;
-        gap: 20px;
-    }
-    .hero {
-        padding-top: 150px; 
-    }
+  .menu-toggle {
+    display: flex;
+  }
 
-    /* (index.html) */
-    .hero-image img {
-        max-width: 80%;
-        height: auto;
-    }
-    .menu-items {
-        flex-direction: column;
-        align-items: center;
-    }
-    .menu-item {
-        width: 80%;
-    }
-    
-    /* (menu.html) */
-    .full-menu-grid {
-        grid-template-columns: 1fr;
-    }
-    .menu-page-container h1::before,
-    .menu-page-container h1::after {
-        display: none; 
-    }
-    .modal-content {
-        width: 95%;
-        padding: 20px;
-    }
-    #modalTitle {
-        font-size: 1.5rem;
-    }
-    #modalDescription {
-        font-size: 1rem;
-    }
-    #modalPrice {
-        font-size: 1.2rem;
-    }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(26, 26, 26, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+  }
 
-    /* (about.html) */
-    .about-us-page {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 30px;
-    }
-    .about-logo-container {
-        max-width: 250px;
-    }
-    .social-links {
-        align-items: center;
-    }
-    .social-links li a {
-        justify-content: center;
-    }
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
 }
