@@ -1,76 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Mie7Tjin</title>
-    <link rel="stylesheet" href="styles.css?v=2">
+<html lang="id"> <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mie7Tjin - Makanan Nyaman Khas Asia</title> <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img src="foto/logo baru panjang.png" alt="Logo Mie7Tjin"> </a>
+        
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html" class="active">Beranda</a> <a href="menu.html">Menu</a>
+          <a href="about.html">Tentang Kami</a> </nav>
+      </div>
+    </div>
+  </header>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="foto/file.jpeg" alt="The Mie7Tjin Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active-link">HOME</a></li>
-                <li><a href="menu.html">PRODUCT</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
-            </ul>
-        </nav>
-    </header>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to Mie7Tjin</h1> <p class="hero-subtitle">Mie7Tjin Makanan Cepat Saji Bagi Mahasiswa</p> <a href=#menu class="btn btn-primary">LIHAT MENU KAMI</a> </div>
+  </section>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>The Mie7Tjin</h1>
-                <p>Delicious food for every mood</p>
-                <a href="#menu" class="cta-button">ORDER NOW</a>
-            </div>
-            <div class="hero-image">
-                <img src="foto/file.jpeg" alt="Delicious Food">
-            </div>
-        </section>
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title">Semua Tentang Mie7Tjin</h2> <p class="section-description">
+        Sibuk? Kami punya solusi lezat yang unik! Rasakan perpaduan sempurna praktisnya sandwich premium dengan cita rasa mie khas nusantara. Menu ini kami ciptakan dari bahan-bahan terbaik, khusus untuk gaya hidup Anda yang cepat dan praktis. Kami siap mengantar kelezatan ini kapan saja Anda butuhkan.</p>
+      <p class="section-description" style="margin-top: 1rem;">
+        Pesan sekarang, nikmati kemudahannya!</p>
+    </div>
+  </section>
 
-        <section class="about" id="about">
-            <div class="about-image">
-                <img src="foto/file.jpeg" alt="Our Sandwich">
-            </div>
-            <div class="about-content">
-                <h2>All About Mie7Tjin</h2>
-                <p>We have been serving irresistible comfort food since 1999. Our mission is to keep you smiling with every bite.</p>
-                <p>Treat yourself to a feel-good meal today!</p>
-            </div>
-        </section>
+  <section id ="menu" class="section-padding" style="background: #252525;">
+    <div class="container">
+      <h2 class="section-title">Apa yang Kami Tawarkan</h2> <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🥪</div>
+          <h3>Sandwich Gourmet</h3> <p class="card-price">Rp 18.000</p> <p class="card-description">Sandwith nikmat berlumuran coklatk</p> </div>
+        <div class="card">
+          <div class="card-icon">🥪</div>
+          <h3>Sandwich Gourmet</h3> <p class="card-price">Rp 15.000</p> <p class="card-description">Bahan-bahan premium dalam roti yang dipanggang sempurna</p> </div>
+        <div class="card">
+          <div class="card-icon">🥪</div>
+          <h3>MSandwich Gourmet</h3> <p class="card-price">Rp 8.000</p> <p class="card-description">Sandwith nikmat berlumuran coklat</p> </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="menu.html" class="btn btn-primary">LIHAT MENU LENGKAP</a> </div>
+    </div>
+  </section>
 
-        <section class="menu" id="menu">
-            <h2>What We Offer</h2>
-            <p class="menu-subtitle">Curious? Here are our most popular menu items.</p>
-            
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="foto/file.jpeg" alt="Noodles">
-                    <p>Noodles</p>
-                </div>
-                <div class="menu-item">
-                    <img src="foto/file.jpeg" alt="Sandwich">
-                    <p>Sandwich</p>
-                </div>
-                <div class="menu-item">
-                    <img src="foto/file.jpeg" alt="Ice Tea">
-                    <p>Ice Tea</p>
-                </div>
-            </div>
-            <a href="menu.html" class="cta-button">VIEW FULL MENU</a>
-        </section>
-    </main>
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title">Mengapa Memilih Kami</h2> <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">✨</div>
+          <h3>Makanan Berkualitas</h3> <p>Sehat dan Mengeyangkan</p> </div>
+        <div class="feature-box">
+          <div class="feature-icon">⚡</div>
+          <h3>Pelayanan Cepat</h3> <p>Sat Set Wat Wet langsung sampai tujuan</p> </div>
+        <div class="feature-box">
+          <div class="feature-icon">💰</div>
+          <h3>Harga Terjangkau</h3> <p>Harga terjangkau bagi mahasiswa</p> </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 The Mie7Tjin. All Rights Reserved.</p>
-    </footer>
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="foto/logo tok.png" alt="Logo Mie7Tjin" style="width: 60px; margin-bottom: 1rem;"> <h3>Mie7Tjin</h3>
+          <p>Makanan Cepat Saji Mahasiswa</p>
+        </div>
+        <div class="footer-col">
+          <h3>Tautan Cepat</h3> <ul>
+            <li><a href="index.html">Beranda</a></li> <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">Tentang Kami</a></li> </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Hubungi Kami</h3> <p>Email: miet7jin@gmail.com</p>
+          <p>Phone: +62 823 3654 5538</p>
+        </div>
+        <div class="footer-col">
+          <h3>Ikuti Kami</h3> <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-solid fa-globe"></i></a>
+        </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MieT7in. © copyright.</p> </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
